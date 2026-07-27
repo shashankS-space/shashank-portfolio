@@ -4,15 +4,10 @@
   box-sizing: border-box;
 }
 
-body::before{
-position: relative;
-  overflow: hidden;
-}
-
 
 :root{
   --bg:#050816;
-  --bg-secondary:#0F172A;
+  --bg-secondary:#0A1022;
 
   --card: #111827;
   --border: #23304A;
