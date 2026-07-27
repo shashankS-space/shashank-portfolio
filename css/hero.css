@@ -4,6 +4,20 @@
   align-items:center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:radial-gradient(circle at center,rgba(0, 255, 255, .12),transparent 60%),
+  linear-gradient( rgba(255, 255, 255, .05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+
+  z-index: -1;
+}
+
 .hero-container{
   display:flex;
   flex-direction: column;
@@ -22,7 +36,8 @@
 }
 
 .hero-title span{
-  color:var(--accent-color);
+  color:var(--highlight);
+  font-family: "orbitron";
 }
 
 .hero-role{
@@ -48,6 +63,46 @@
   box-shadow: 0 0 20px var(--primary);
 }
 
+.energy-core{
+
+  position:absolute;
+
+  width:25px;
+  height:25px;
+
+  border-radius:50%;
+
+  background:var(--highlight);
+
+  filter:blur(8px);
+
+  opacity:.8;
+
+  z-index:-1;
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(.4);
+    opacity:.2;
+  }
+
+  50%{
+    transform:scale(1.2);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(.4);
+    opacity:.2;
+  }
+
+}
+
+.energy-core{
+  animation:charge 1.6s ease forwards;
+}
+
 @media(min-width:768px){
   .hero-description{
     margin: 0;
@@ -64,8 +119,10 @@
   }
 
   .hero-right{
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .hero-title{
@@ -76,5 +133,7 @@
     width: 350px;
     height: 350px;
   }
+
+
 
 }
